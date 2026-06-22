@@ -1,0 +1,98 @@
+/* ==========================================================================
+   1. MOVIE CARD CONTAINER
+   ========================================================================== */
+.movie-card {
+  background-color: #1a1a1a;   /* Subtle dark grey contrast against page background */
+  border-radius: 8px;
+  overflow: hidden;            /* Ensures child elements respect the rounded corners */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;          /* Establishes the coordinate system for absolute overlays */
+}
+
+/* Hover lift effect */
+.movie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================================================
+   2. MOVIE POSTER & OVERLAY AREA
+   ========================================================================== */
+.movie-poster {
+  position: relative;
+  aspect-ratio: 2/3;           /* Standard cinema poster proportions (Width:Height) */
+  width: 100%;
+  background-color: #333;      /* Fallback background shade if image fails to load */
+}
+
+.movie-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;           /* Fits the image perfectly without squishing it */
+}
+
+/* Hidden container that pops up on hover */
+.movie-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.8));
+  opacity: 0;                  /* Invisible by default */
+  display: flex;
+  justify-content: flex-end;   /* Pushes the heart button to the right */
+  align-items: flex-start;    /* Pushes the heart button to the top */
+  padding: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+/* Trigger reveal when card is hovered */
+.movie-card:hover .movie-overlay {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   3. FAVORITES INTERACTIVE BUTTON
+   ========================================================================== */
+.favorite-btn {
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border-radius: 50%;          /* Perfect circle */
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.2s ease;
+}
+
+.favorite-btn:hover {
+  transform: scale(1.15);      /* Subtle pulse growth when cursor points at heart */
+  background: rgba(229, 9, 20, 0.85); /* Accent red indicator on active hover */
+}
+
+/* ==========================================================================
+   4. TEXT INFORMATION METADATA BLOCK
+   ========================================================================== */
+.movie-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-grow: 1;                /* Forces text sections to stretch uniformly */
+}
+
+.movie-info h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap;         /* Keeps title restricted to a single row */
+  overflow: hidden;            /* Conceals trailing text */
+  text-overflow: ellipsis;     /* Clean truncation adding standard trailing dots "..." */
+}
+
+.movie-info p {
+  color: #a0a0a0;              /* Soft slate grey text for secondary date details */
+  font-size: 0.9rem;
+}

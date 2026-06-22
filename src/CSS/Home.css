@@ -1,0 +1,75 @@
+/* ==========================================================================
+   1. MAIN PAGE LAYOUT
+   ========================================================================== */
+.home {
+  padding: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; /* Centers the content block horizontally on wide screens */
+}
+
+/* ==========================================================================
+   2. SEARCH FORM CONTAINER & INPUTS
+   ========================================================================== */
+.search-form {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;                 /* Clean spacing between input and button */
+  margin-bottom: 3rem;          /* Generous separation before the movie grid starts */
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;           /* Centers the search bar block */
+}
+
+.search-input {
+  flex: 1;                      /* Forces input to stretch and take up available space */
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+  border: 1px solid #333333;
+  background-color: #1a1a1a;    /* Matches the dark theme palette */
+  color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Visual active state when user clicks inside the input box */
+.search-input:focus {
+  border-color: #e50914;        /* Changes border to brand red */
+  box-shadow: 0 0 8px rgba(229, 9, 20, 0.2); /* Soft glow effect */
+}
+
+/* ==========================================================================
+   3. SEARCH BUTTON ACTION
+   ========================================================================== */
+.search-btn {
+  padding: 0.8rem 1.75rem;
+  background-color: #e50914;    /* Movie App Accent Red */
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.search-btn:hover {
+  background-color: #b80710;    /* Darker crimson red on hover */
+}
+
+.search-btn:active {
+  transform: scale(0.98);       /* Micro-compression click effect */
+}
+
+/* ==========================================================================
+   4. MOVIES GRID STRUCTURE
+   ========================================================================== */
+.movies-grid {
+  display: grid;
+  /* Automatically calculates column capacity based on individual card limits */
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2.5rem;                  /* Generous grid spacing for clean layout breathing room */
+  width: 100%;
+}

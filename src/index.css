@@ -1,0 +1,46 @@
+/* ==========================================================================
+   GLOBAL RESET & BASELINE RESETS
+   ========================================================================== */
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth; /* Smooth transitions when jumping to sections */
+}
+
+/* Ensure smooth image scaling across browsers */
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+/* Reset button styling defaults globally so we can build them cleanly */
+button, input {
+  font-family: inherit;
+}
+
+/* ==========================================================================
+   CUSTOM COMPACT SCROLLBAR STYLING
+   ========================================================================== */
+/* Width of the scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track (the background path of the scrollbar) */
+::-webkit-scrollbar-track {
+  background: #101010; 
+}
+ 
+/* Thumb (the draggable scrolling bar handle) */
+::-webkit-scrollbar-thumb {
+  background: #333; 
+  border-radius: 4px;
+}
+
+/* Thumb behavior when hovered or dragged */
+::-webkit-scrollbar-thumb:hover {
+  background: #e50914; /* Swaps track color to match your app theme color */
+}
